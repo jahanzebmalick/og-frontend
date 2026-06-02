@@ -6,6 +6,8 @@ import Search from './Search'
 import Verified from './Verified'
 import PromoSlideshow from './PromoSlideshow'
 import Avatar from './Avatar'
+import PostDetail from './PostDetail'
+
 
 
 
@@ -56,6 +58,8 @@ export default function Layout({ me, setMe }) {
         {view.name === 'feed' && <Feed me={me} onView={setView} />}
         {view.name === 'profile' && <Profile username={view.username} me={me} onView={setView} />}
         {view.name === 'search' && <Search onView={setView} />}
+        {view.name === 'post' && <PostDetail postId={view.id} me={me} onView={setView} />}
+
       </main>
 
       {/* RIGHT SIDEBAR */}
