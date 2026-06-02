@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { font-family: 'Inter', sans-serif; background: #0f1419; color: #e7e9ea; }
+@keyframes pulse-blue { 0%, 100% { box-shadow: 0 0 0 0 rgba(29,155,240,0.5); } 50% { box-shadow: 0 0 0 8px rgba(29,155,240,0); } }
+@keyframes count { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.pulse-blue { animation: pulse-blue 2s infinite; }
+.count-anim { animation: count 0.5s ease-out; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(15deg); }
+}
+.animate-float { animation: float 8s ease-in-out infinite; }
+@keyframes ping-once {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+.animate-ping-once { animation: ping-once 0.6s ease-out; }
+
+@keyframes burst {
+  0% { opacity: 1; transform: scale(0) translate(0,0); }
+  100% { opacity: 0; transform: scale(1.5) translate(var(--bx, 0), var(--by, 0)); }
+}
+.animate-burst { 
+  animation: burst 0.6s ease-out forwards;
+  position: absolute;
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+.animate-sparkle { animation: sparkle 3s ease-in-out infinite; }
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in { animation: slide-in 0.6s ease-out; }
