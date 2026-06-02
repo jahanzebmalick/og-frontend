@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || ''
+const API_BASE = ''  // always use relative URLs → Vercel proxy handles it
 
 const json = (path, method = 'GET', body) =>
   fetch(API_BASE + path, {
