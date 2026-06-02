@@ -5,6 +5,8 @@ import Profile from './Profile'
 import Search from './Search'
 import Verified from './Verified'
 import PromoSlideshow from './PromoSlideshow'
+import Avatar from './Avatar'
+
 
 
 export default function Layout({ me, setMe }) {
@@ -66,10 +68,8 @@ export default function Layout({ me, setMe }) {
           {trending.slice(0, 5).map(u => (
             <div key={u.username} onClick={() => setView({ name: 'profile', username: u.username })}
                  className="flex items-center gap-3 py-2.5 cursor-pointer hover:bg-og-bg/50 rounded-lg px-2 -mx-2 transition">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white"
-                   style={{ background: `linear-gradient(135deg, hsl(${(u.username.charCodeAt(0) * 30) % 360}, 70%, 50%), hsl(${(u.username.charCodeAt(0) * 30 + 60) % 360}, 70%, 60%))` }}>
-                {u.display_name[0].toUpperCase()}
-              </div>
+              <Avatar name={u.username} displayName={u.display_name} size="md"/>
+
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1 truncate">
                   <span className="font-bold text-og-text truncate">{u.display_name}</span>

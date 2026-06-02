@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { api } from '../api'
+import Avatar from './Avatar'
+
 
 export default function Compose({ me, onPost, replyTo }) {
   const [text, setText] = useState('')
@@ -18,14 +20,9 @@ export default function Compose({ me, onPost, replyTo }) {
   const charPct = (text.length / 280) * 100
   const charColor = text.length > 260 ? '#ef4444' : text.length > 240 ? '#eab308' : '#1d9bf0'
 
-  const avatarGrad = `linear-gradient(135deg, hsl(${(me.username.charCodeAt(0) * 30) % 360}, 70%, 50%), hsl(${(me.username.charCodeAt(0) * 30 + 60) % 360}, 70%, 60%))`
-
   return (
     <div className={`p-4 border-b border-og-border flex gap-3 transition-all ${focused ? 'bg-og-card/20' : ''}`}>
-      <div className="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center font-bold text-white text-lg shadow-lg"
-           style={{ background: avatarGrad }}>
-        {me.display_name[0].toUpperCase()}
-      </div>
+  <Avatar name={me.username} displayName={me.display_name}/>
       <div className="flex-1">
         <textarea value={text} onChange={e => setText(e.target.value)}
                   onFocus={() => setFocused(true)}
