@@ -31,24 +31,22 @@ export default function Post({ post, me, onUpdate, onView }) {
     return `${Math.floor(diff / 86400)}d`
   }
 
-  // Avatar gradient based on username (deterministic)
-  const avatarGrad = `linear-gradient(135deg, hsl(${(post.owner.charCodeAt(0) * 30) % 360}, 70%, 50%), hsl(${(post.owner.charCodeAt(0) * 30 + 60) % 360}, 70%, 60%))`
 
   return (
     <div className="group relative p-5 border-b border-og-border hover:bg-og-card/30 transition-all cursor-pointer overflow-hidden">
       {/* Hover glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-og-accent/0 via-og-accent/5 to-og-accent/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
       
-      <div className="relative flex gap-3">
-        {/* Avatar */}
-       <Avatar name={post.owner} displayName={post.owner_display_name}/>
-          {post.owner_verified === 1 && (
-            <div className="absolute -bottom-1 -right-1 bg-og-bg rounded-full p-0.5">
-              <Verified size={14}/>
-            </div>
-          )}
-        </div>
-
+<div className="relative flex gap-3">
+  {/* Avatar */}
+  <div className="relative flex-shrink-0">
+    <Avatar name={post.owner} displayName={post.owner_display_name}/>
+    {post.owner_verified === 1 && (
+      <div className="absolute -bottom-1 -right-1 bg-og-bg rounded-full p-0.5">
+        <Verified size={14}/>
+      </div>
+    )}
+  </div>
         <div className="flex-1 min-w-0">
           {/* Header */}
           <div className="flex items-center gap-1.5 mb-1 flex-wrap"
