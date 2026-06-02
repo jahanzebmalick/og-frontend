@@ -1,7 +1,9 @@
+const API_BASE = import.meta.env.VITE_API_URL || ''
+
 const json = (path, method = 'GET', body) =>
-  fetch(path, {
+  fetch(API_BASE + path, {
     method,
-    credentials: 'include',          // ← ADD THIS LINE
+    credentials: 'include',
     headers: body ? { 'Content-Type': 'application/json' } : undefined,
     body: body ? JSON.stringify(body) : undefined,
   }).then(async r => {
