@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/signup", "destination": "https://og-backend-t83n.onrender.com/signup" },
+    { "source": "/login", "destination": "https://og-backend-t83n.onrender.com/login" },
+    { "source": "/logout", "destination": "https://og-backend-t83n.onrender.com/logout" },
+    { "source": "/me", "destination": "https://og-backend-t83n.onrender.com/me" },
+    { "source": "/feed", "destination": "https://og-backend-t83n.onrender.com/feed" },
+    { "source": "/explore", "destination": "https://og-backend-t83n.onrender.com/explore" },
+    { "source": "/posts", "destination": "https://og-backend-t83n.onrender.com/posts" },
+    { "source": "/posts/(.*)", "destination": "https://og-backend-t83n.onrender.com/posts/$1" },
+    { "source": "/follow", "destination": "https://og-backend-t83n.onrender.com/follow" },
+    { "source": "/unfollow", "destination": "https://og-backend-t83n.onrender.com/unfollow" },
+    { "source": "/users/(.*)", "destination": "https://og-backend-t83n.onrender.com/users/$1" },
+    { "source": "/search", "destination": "https://og-backend-t83n.onrender.com/search" },
+    { "source": "/profile", "destination": "https://og-backend-t83n.onrender.com/profile" },
+    { "source": "/og-status", "destination": "https://og-backend-t83n.onrender.com/og-status" }
+  ]
+}
